@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Nov 24, 2020, 5:41:06 PM
-    Author     : GARIBA
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
