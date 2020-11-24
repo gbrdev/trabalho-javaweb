@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --white: rgb(255 255 255 / 100%);
+  --black: rgb(0 0 0 / 100%);
+  --gray-7: rgb(18 18 18);
+  --gray-10: rgb(24 24 24);
+  --gray-15: rgb(40 40 40);
+  --gray-20: rgb(51 51 51);
+  --gray-30: rgb(83 83 83);
+  --gray-50: rgb(127 127 127);
+  --gray-70: rgb(179 179 179);
+  --gray-80: rgb(204 204 204);
+  --gray-85: rgb(217 217 217);
+  --gray-90: rgb(238 238 238);
+  --gray-95: rgb(248 248 248);
+  --gray-25: rgb(64 64 64);
+  --gray-40: rgb(97 97 97);
+  --gray-45: rgb(117 117 117);
+  --gray-60: rgb(158 158 158);
+  --gray-75: rgb(189 189 189);
+  --aquamarine: rgb(155 240 225);
+  --aubergine: rgb(80 55 80);
+  --azure: rgb(80 155 245);
+  --bole: rgb(200 125 85);
+  --bright-red: rgb(230 30 50);
+  --chocolate: rgb(125 75 50);
+  --citric: rgb(205 245 100);
+  --electric-seafoam: rgb(25 230 140);
+  --factory-yellow: rgb(250 230 45);
+  --forest: rgb(0 100 80);
+  --fuchsia: rgb(220 20 140);
+  --gold: rgb(245 155 35);
+  --midnight: rgb(30 50 100);
+  --neon-green: rgb(95 245 80);
+  --orange: rgb(255 100 55);
+  --pink: rgb(255 205 210);
+  --powder-green: rgb(195 240 200);
+  --royal-blue: rgb(45 70 185);
+  --salmon: rgb(245 115 160);
+  --spearmint: rgb(39 133 106);
+  --storm: rgb(160 195 210);
+  --sunflower: rgb(255 200 100);
+  --tan: rgb(195 150 135);
+  --tangerine: rgb(227 35 14);
+  --violet: rgb(175 40 150);
+  --success: rgb(29 185 84);
+  --announcement: rgb(46 119 208);
+  --info: rgb(238 238 238);
+  --warning: rgb(255 87 34);
+  --failure: rgb(226 33 52);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--gray-10);
+  background-color: var(--white);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* RED LOGO  */
+.bg-red-logo {
+  background-color: #f63d3a;
+}
+.text-red-logo {
+  color: #f63d3a;
+}
+
+/* GREEN LOGO */
+.bg-green-logo {
+  background-color: #19a68c;
+}
+.text-green-logo {
+  color: #19a68c;
+}
+
+/* DARKBLUE LOGO */
+.bg-darkblue-logo {
+  background-color: #193b48;
+}
+.text-darkblue-logo {
+  color: #193b48;
+}
+
+/* YELLOW LOGO */
+.bg-yellow-logo {
+  background-color: #fda543;
+}
+.text-yellow-logo {
+  color: #fda543;
+}
+
+/* LOADER LOGO */
+.hidden {
+  display: hidden;
+}
+
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+.load hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+.load :first-child {
+  background: #19a68c;
+  animation-delay: -1.5s;
+}
+.load :nth-child(2) {
+  background: #f63d3a;
+  animation-delay: -1s;
+}
+.load :nth-child(3) {
+  background: #fda543;
+  animation-delay: -0.5s;
+}
+.load :last-child {
+  background: #193b48;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
+
+/* TABLE RESIZING  */
