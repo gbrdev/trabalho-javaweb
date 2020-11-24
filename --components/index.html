@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Transportadora</title>
+    <link rel="stylesheet" href="./src/css/tailwind.min.css" />
+    <link rel="stylesheet" href="./src/css/app.css" />
+    <link rel="icon" href="src/svg/favicon.svg">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="transportadora"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="loader load">
+      <hr/><hr/><hr/><hr/>
+    </div>
+  <main class="bg-loader hidden z-10 w-full">
+    <nav id="header" class="bg-white fixed w-full z-10 top-0 shadow">
+      <div
+        class="w-full container flex flex-wrap mx-auto items-center pt-3 pb-3 lg:pb-0 md:pb-3"
+      >
+        <div class="w-1/2 pl-3 lg:pl-0 md:pl-3">
+          <a
+            class="no-underline hover:no-underline"
+            href="#">
+            <img src="src/svg/logo.svg" alt="Logo Elipse Transportes" width="160px">
+          </a>
+        </div>
+        <div class="w-1/2 pr-0">
+          <div class="flex relative inline-block float-right">
+            <div class="relative text-sm">
+              <button
+                id="userButton"
+                class="flex items-center focus:outline-none mr-3"
+              >
+                <img
+                  class="w-8 h-8 rounded-full mr-4"
+                  src="./src/profiles/default.png"
+                  alt="Avatar of User"
+                />
+                <span class="hidden md:inline-block">Olá, {user.name} </span>
+                <svg
+                  class="pl-2 h-2"
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 129 129"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  enable-background="new 0 0 129 129"
+                >
+                  <g>
+                    <path
+                      d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"
+                    />
+                  </g>
+                </svg>
+              </button>
+              <div
+                id="userMenu"
+                class="bg-white rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible"
+              >
+                <ul class="list-reset">
+                  <li>
+                    <a
+                      href="#"
+                      class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline"
+                      >Minha conta</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline"
+                    >
+                      Notificações
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="border-t mx-2 border-gray-400" />
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline"
+                      >Sair</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="block lg:hidden pr-4">
+              <button
+                id="nav-toggle"
+                class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-teal-500 appearance-none focus:outline-none"
+              >
+                <svg
+                  class="fill-current h-3 w-3"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- LINHA DOIS -->
+        <div
+          class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 z-20"
+          id="nav-content"
+        >
+          <ul class="list-reset lg:flex flex-1 item-center px-4 md:px-0">
+            <li class="mr-6 my-2 md:my-0">
+              <a
+                class="block py-1 md:py-3 pl-1 pr-2 align-middle text-darkblue-logo hover:text-gray-800 border-b-2 border-blue-900 hover:border-blue-900"
+                href="#home"
+              >
+                <i class="fas fa-home pr-1"></i>Principal
+              </a>
+            </li>
+            <li class="mr-6 my-2 md:my-0">
+              <a
+                class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-red-600"
+                href="#pedidos"
+              >
+                <i class="fas fa-box pr-1"></i>Pedidos
+              </a>
+            </li>
+            <li class="mr-6 my-2 md:my-0">
+              <a
+                class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-green-600"
+                href="#cadastrar"
+              >
+                <i class="fas fa-user-plus pr-1"></i>Cadastrar
+              </a>
+            </li>
+            <li class="mr-6 my-2 md:my-0">
+              <a
+                class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-yellow-600"
+                href="#usuarios"
+              >
+                <i class="fas fa-users pr-1"></i>Usuários
+              </a>
+            </li>
+          </ul>
+          <div class="relative pull-right pl-4 pr-4 md:pr-0">
+            <input
+              type="search"
+              placeholder="Search"
+              class="w-full bg-gray-100 text-sm text-gray-800 transition border focus:outline-none focus:border-gray-700 rounded py-1 px-2 pl-10 appearance-none leading-normal"
+            />
+            <div
+              class="absolute search-icon"
+              style="top: 0.375rem; left: 1.75rem"
+            >
+              <svg
+                class="fill-current pointer-events-none text-gray-800 w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- FIM MENU -->
+
+    <!-- INICIO DO CONTEUDO -->
+    <div class="container w-full mx-auto lg:pt-20 lg:mt-10 pt-20 mt-5">
+      <div
+        class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+        <!-- BOX DE INFOS -->
+        <div class="flex flex-wrap">
+          <!--Entregas totais-->
+          <div class="w-full md:w-1/2 xl:w-1/4 p-3">
+            <div class="bg-white border rounded shadow p-2">
+              <div class="flex flex-row items-center">
+                <div class="flex-shrink pr-4">
+                  <div class="rounded p-3 bg-darkblue-logo">
+                    <i class="fa fa-boxes fa-2x fa-fw fa-inverse"></i>
+                  </div>
+                </div>
+                <div class="flex-1 text-right md:text-center">
+                  <h5 class="font-bold uppercase text-gray-500">
+                    Pedidos em Andamento
+                  </h5>
+                  <h3 class="font-bold text-3xl">
+                    2
+                    <span class="text-darkblue-logo"
+                      ><i class="fas fa-road"></i
+                    ></span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/Entregas-->
+          <!--Entregas totais-->
+          <div class="w-full md:w-1/2 xl:w-1/4 p-3">
+            <div class="bg-white border rounded shadow p-2">
+              <div class="flex flex-row items-center">
+                <div class="flex-shrink pr-4">
+                  <div class="rounded p-3 bg-red-logo">
+                    <i class="fa fa-box-open fa-2x fa-fw fa-inverse"></i>
+                  </div>
+                </div>
+                <div class="flex-1 text-right md:text-center">
+                  <h5 class="font-bold uppercase text-gray-500">
+                    Pedidos entregues
+                  </h5>
+                  <h3 class="font-bold text-3xl">
+                    118
+                    <span class="text-red-logo"
+                      ><i class="fas fa-caret-up"></i
+                    ></span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/Entregas-->
+          <!--Usuários Cadastrados-->
+          <div class="w-full md:w-1/2 xl:w-1/4 p-3">
+            <div class="bg-white border rounded shadow p-2">
+              <div class="flex flex-row items-center">
+                <div class="flex-shrink pr-4">
+                  <div class="rounded p-3 bg-green-logo">
+                    <i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i>
+                  </div>
+                </div>
+                <div class="flex-1 text-right md:text-center">
+                  <h5 class="font-bold uppercase text-gray-500">
+                    Novos Usuários
+                  </h5>
+                  <h3 class="font-bold text-3xl">
+                    2
+                    <span class="text-green-logo"
+                      ><i class="fas fa-caret-up"></i
+                    ></span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/Usuários Cadastrados-->
+          <div class="w-full md:w-1/2 xl:w-1/4 p-3">
+            <!--Novos clientes-->
+            <div class="bg-white border rounded shadow p-2">
+              <div class="flex flex-row items-center">
+                <div class="flex-shrink pr-4">
+                  <div class="rounded p-3 bg-yellow-logo">
+                    <i class="fas fa-users fa-2x fa-fw fa-inverse"></i>
+                  </div>
+                </div>
+                <div class="flex-1 text-right md:text-center">
+                  <h5 class="font-bold uppercase text-gray-500">
+                    Usuários
+                  </h5>
+                  <h3 class="font-bold text-3xl">
+                    87
+                    <span class="text-yellow-logo"
+                      ><i class="fas fa-exchange-alt"></i
+                    ></span>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/NOVOS CLIENTES-->
+        </div>
+        <!-- /BOX DE INFOS -->
+
+        <!--Divisor-->
+        <hr class="border-b-0 border-gray-400 my-8 mx-4" />
+        <!--/Divisor -->
+        <!-- GERADOR DE PESSOAS -->
+        <!-- https://www.4devs.com.br/gerador_de_pessoas -->
+        <!-- TABELA PEDIDOS -->
+        <div class="flex flex-row flex-wrap flex-grow mt-2">
+          <div class="w-full md:w-1/1">
+            <div class="w-full p-3">
+            <!--Table Card-->
+            <div class="bg-white border rounded shadow">
+              <div class="border-b p-3">
+                <h5 class="font-bold uppercase text-gray-600">Últimos Pedidos</h5>
+              </div>
+              <div class="p-5">
+                <table class="w-full p-5 text-gray-700">
+                  <thead>
+                    <tr>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Pedido</th>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Empresa</th>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Cliente</th>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Telefone</th>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Status</th>
+                      <th class="p-1 font-bold uppercase text-left text-blue-900  hidden lg:table-cell">Ações</th>
+                  </tr>
+                  </thead>
+  
+                  <tbody>
+                    <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Número do pedido</span>
+                        #000120
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Vendido por</span>
+                          Kabum
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Cliente</span>
+                          Craque Neto
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Telefone</span>
+                        (17) 99600-9999
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 mb-10 text-xs font-bold">Status</span>
+                          <span class="rounded bg-red-400 py-1 px-3 text-xs font-bold text-white">Aguardando</span>
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Actions</span>
+                          <a href="#" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Editar</a>
+                          <a href="#" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Remover</a>
+                      </td>
+                  </tr>
+                  <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Número do pedido</span>
+                      #000119
+                    </td>  
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Vendido por</span>
+                          Amazon
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Cliente</span>
+                          Arnold Schwarzenegger
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Telefone</span>
+                        (17) 99600-9999
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Status</span>
+                          <span class="rounded bg-green-400 py-1 px-3 text-xs font-bold text-white">Entregue</span>
+                      </td>
+                      <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                          <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Actions</span>
+                          <a href="#" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Editar</a>
+                          <a href="#" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Remover</a>
+                      </td>
+                  </tr>
+                  <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Número do pedido</span>
+                      #000118
+                    </td>
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Vendido por</span>
+                        Americanas
+                    </td>
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Cliente</span>
+                        Robsom Parkson
+                    </td>
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                      <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Telefone</span>
+                      (17) 99600-9999
+                    </td>
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Status</span>
+                        <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold text-white">Em rota de entrega</span>
+                    </td>
+                    <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
+                        <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Actions</span>
+                        <a href="#" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Editar</a>
+                        <a href="#" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Remover</a>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+  
+                <button type="button" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">
+                    Novo Pedido
+                </button>
+                <button type="button" class="border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline">
+                  Ver todos
+              </button>
+              </div>
+            </div>
+            <!--/table Card-->
+          </div>
+        </div>
+      </div>
+      <!-- /TABELA PEDIDOS -->
+    </div>
+    <!-- FIM DO CONTEUDO -->
+
+    <!-- INICIO DO FOOTER -->
+    <div class="bg-gray-100">
+    <div class="w-12xl md-auto text-gray-800 flex flex-wrap justify-between">
+      <div class="p-5 w-48 ">
+        <div class="text-xs uppercase text-gray-500 font-medium">Empresa</div>
+          <a class="my-3 block" href="/#">Serviços <span class="text-teal-600 text-xs p-1"></span></a>
+          <a class="my-3 block" href="/#">Produtos <span class="text-teal-600 text-xs p-1"></span></a>
+          <a class="my-3 block" href="/#">Quem somos <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
+      <div class="p-5 w-48 ">
+        <div class="text-xs uppercase text-gray-500 font-medium">Usuários</div>
+        <a class="my-3 block" href="/#">Logar-se<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Novo usuário<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
+      </div>
+      <div class="p-5 w-48 ">
+        <div class="text-xs uppercase text-gray-500 font-medium">Usuários</div>
+        <a class="my-3 block" href="/#">Logar-se<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Novo usuário<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
+      </div>
+      <div class="p-5 w-48 ">
+        <div class="text-xs uppercase text-gray-500 font-medium">Usuários</div>
+        <a class="my-3 block" href="/#">Logar-se<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Novo usuário<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
+      </div>
+    </div>
+   <div class="bg-gray-100 pt-2 ">
+      <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
+         md:flex-row max-w-12xl">
+         <div class="mt-2">© Copyright 2020. All Rights Reserved.</div>
+         <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+            <a href="/#" class="w-6 mx-1">
+               <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-400" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                  <path id="Twitter" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
+                     5.373,-12 12,-12c6.627,0 12,5.373 12,12Zm-6.465,-3.192c-0.379,0.168
+                     -0.786,0.281 -1.213,0.333c0.436,-0.262 0.771,-0.676
+                     0.929,-1.169c-0.408,0.242 -0.86,0.418 -1.341,0.513c-0.385,-0.411
+                     -0.934,-0.667 -1.541,-0.667c-1.167,0 -2.112,0.945 -2.112,2.111c0,0.166
+                     0.018,0.327 0.054,0.482c-1.754,-0.088 -3.31,-0.929
+                     -4.352,-2.206c-0.181,0.311 -0.286,0.674 -0.286,1.061c0,0.733 0.373,1.379
+                     0.94,1.757c-0.346,-0.01 -0.672,-0.106 -0.956,-0.264c-0.001,0.009
+                     -0.001,0.018 -0.001,0.027c0,1.023 0.728,1.877 1.694,2.07c-0.177,0.049
+                     -0.364,0.075 -0.556,0.075c-0.137,0 -0.269,-0.014 -0.397,-0.038c0.268,0.838
+                     1.048,1.449 1.972,1.466c-0.723,0.566 -1.633,0.904 -2.622,0.904c-0.171,0
+                     -0.339,-0.01 -0.504,-0.03c0.934,0.599 2.044,0.949 3.237,0.949c3.883,0
+                     6.007,-3.217 6.007,-6.008c0,-0.091 -0.002,-0.183 -0.006,-0.273c0.413,-0.298
+                     0.771,-0.67 1.054,-1.093Z"></path>
+               </svg>
+            </a>
+            <a href="/#" class="w-6 mx-1">
+               <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-400" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                  <path id="Facebook" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
+                     5.373,-12 12,-12c6.627,0 12,5.373
+                     12,12Zm-11.278,0l1.294,0l0.172,-1.617l-1.466,0l0.002,-0.808c0,-0.422
+                     0.04,-0.648 0.646,-0.648l0.809,0l0,-1.616l-1.295,0c-1.555,0 -2.103,0.784
+                     -2.103,2.102l0,0.97l-0.969,0l0,1.617l0.969,0l0,4.689l1.941,0l0,-4.689Z"></path>
+               </svg>
+            </a>
+            <a href="/#" class="w-6 mx-1">
+               <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-400" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
+                  <path id="Shape" d="M7.3,0.9c1.5,-0.6 3.1,-0.9 4.7,-0.9c1.6,0 3.2,0.3 4.7,0.9c1.5,0.6 2.8,1.5
+                     3.8,2.6c1,1.1 1.9,2.3 2.6,3.8c0.7,1.5 0.9,3 0.9,4.7c0,1.7 -0.3,3.2
+                     -0.9,4.7c-0.6,1.5 -1.5,2.8 -2.6,3.8c-1.1,1 -2.3,1.9 -3.8,2.6c-1.5,0.7
+                     -3.1,0.9 -4.7,0.9c-1.6,0 -3.2,-0.3 -4.7,-0.9c-1.5,-0.6 -2.8,-1.5
+                     -3.8,-2.6c-1,-1.1 -1.9,-2.3 -2.6,-3.8c-0.7,-1.5 -0.9,-3.1 -0.9,-4.7c0,-1.6
+                     0.3,-3.2 0.9,-4.7c0.6,-1.5 1.5,-2.8 2.6,-3.8c1.1,-1 2.3,-1.9
+                     3.8,-2.6Zm-0.3,7.1c0.6,0 1.1,-0.2 1.5,-0.5c0.4,-0.3 0.5,-0.8 0.5,-1.3c0,-0.5
+                     -0.2,-0.9 -0.6,-1.2c-0.4,-0.3 -0.8,-0.5 -1.4,-0.5c-0.6,0 -1.1,0.2
+                     -1.4,0.5c-0.3,0.3 -0.6,0.7 -0.6,1.2c0,0.5 0.2,0.9 0.5,1.3c0.3,0.4 0.9,0.5
+                     1.5,0.5Zm1.5,10l0,-8.5l-3,0l0,8.5l3,0Zm11,0l0,-4.5c0,-1.4 -0.3,-2.5
+                     -0.9,-3.3c-0.6,-0.8 -1.5,-1.2 -2.6,-1.2c-0.6,0 -1.1,0.2 -1.5,0.5c-0.4,0.3
+                     -0.8,0.8 -0.9,1.3l-0.1,-1.3l-3,0l0.1,2l0,6.5l3,0l0,-4.5c0,-0.6 0.1,-1.1
+                     0.4,-1.5c0.3,-0.4 0.6,-0.5 1.1,-0.5c0.5,0 0.9,0.2 1.1,0.5c0.2,0.3 0.4,0.8
+                     0.4,1.5l0,4.5l2.9,0Z"></path>
+               </svg>
+            </a>
+         </div>
+      </div>
+   </div>
+    <!-- FIM DO FOOTER -->
+  </main>
+  </body>
+  <script src="./src/js/script.js"></script>
+</html>
