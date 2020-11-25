@@ -12,7 +12,7 @@
                 </div>
                 <div class="flex-1 text-right md:text-center">
                   <h5 class="font-bold uppercase text-gray-500">
-                    Pedidos em Andamento
+                    Em rota de Entrega
                   </h5>
                   <h3 class="font-bold text-3xl">
                     2

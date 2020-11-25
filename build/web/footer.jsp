@@ -81,3 +81,7 @@
       </div>
    </div>
     <!-- FIM DO FOOTER -->
+    </main>
+    </body>
+    <script src="./src/js/script.js"></script>
+</html>
