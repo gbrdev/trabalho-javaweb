@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 public class PedidoDAO {
     private Connection conexao;
 
+    
     public PedidoDAO() throws Exception {
         try {
             this.conexao = ConFac.getConnection();

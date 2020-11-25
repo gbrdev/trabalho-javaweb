@@ -18,8 +18,8 @@ public class ConFac {
 
     public static Connection getConnection() throws Exception {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/projetoFinal", "root", "");
+            Class.forName("org.postgresql.Driver");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/projetoFinal","postgres", "1234");
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

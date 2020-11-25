@@ -7,12 +7,8 @@
  * Author:  Cyborg
  * Created: 24/11/2020
  */
-CREATE DATABASE projetoFinal;
-
-USE projetoFinal;
-
 CREATE TABLE pedido(
-    idPedido SERIAL,
+	idPedido SERIAL,
     dataRealizacaoPedido DATE NOT NULL,
     prazoEntregaPedido INT NOT NULL,
     veiculoResponsavelPedido VARCHAR(15) NOT NULL,
@@ -21,4 +17,4 @@ CREATE TABLE pedido(
 );
 
 INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido) 
-VALUES ("2020/10/25", 15, "ABC-1234", 2.5, 20.5);
+VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5);
