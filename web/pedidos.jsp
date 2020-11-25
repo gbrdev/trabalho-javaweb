@@ -5,8 +5,7 @@
     <div class="container w-full mx-auto lg:pt-20 lg:mt-10 pt-20 mt-5">
       <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
         <jsp:include page="components/boxServices.jsp"/>
-        <jsp:include page="components/divisor.jsp"/>
-        <jsp:include page="components/tabelaPedidos.jsp"/>
+        <jsp:include page="components/cadastro.jsp"/>
     </div>
     <!-- FIM DO CONTEUDO -->
 <!--FOOTER-->
