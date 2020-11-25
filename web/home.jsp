@@ -1,3 +1,4 @@
+<%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="iso-8859-1" %>
 <!--HEADER QUE CONTEM O MENU-->
 <jsp:include page="header.jsp"/>
@@ -6,7 +7,7 @@
       <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
         <jsp:include page="components/boxServices.jsp"/>
         <jsp:include page="components/divisor.jsp"/>
-        <jsp:include page="components/tabelaPedidos.jsp"/>
+        <jsp:include page="components/ultimosPedidos.jsp"/>
     </div>
     <!-- FIM DO CONTEUDO -->
 <!--FOOTER-->

@@ -119,7 +119,7 @@
                         <ul class="list-reset lg:flex flex-1 item-center px-4 md:px-0">
                             <li class="mr-6 my-2 md:my-0">
                                 <a
-                                    class="block py-1 md:py-3 pl-1 pr-2 align-middle text-darkblue-logo hover:text-gray-800 border-b-2 border-blue-900 hover:border-blue-900"
+                                    class="block py-1 md:py-3 pl-1 pr-2 align-middle text-darkblue-logo hover:text-gray-800 border-b-2 border-gray-100 hover:border-blue-900"
                                     href="home.jsp"
                                     >
                                     <i class="fas fa-home pr-1"></i>Principal
@@ -127,7 +127,7 @@
                             </li>
                             <li class="mr-6 my-2 md:my-0">
                                 <a
-                                    class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-red-600"
+                                    class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-red-600 active:border-red-600"
                                     href="pedidos.jsp"
                                     >
                                     <i class="fas fa-box pr-1"></i>Pedidos
@@ -136,9 +136,9 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a
                                     class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-green-600"
-                                    href="#cadastrar"
+                                    href="novoPedido.jsp"
                                     >
-                                    <i class="fas fa-user-plus pr-1"></i>Cadastrar
+                                    <i class="fas fa-truck-loading pr-1"></i>Novo Pedido
                                 </a>
                             </li>
                             <li class="mr-6 my-2 md:my-0">

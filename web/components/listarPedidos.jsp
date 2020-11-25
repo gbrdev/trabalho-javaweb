@@ -1,3 +1,4 @@
+<%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- TABELA PEDIDOS -->
         <div class="flex flex-row flex-wrap flex-grow mt-2">
@@ -6,7 +7,7 @@
             <!--Table Card-->
             <div class="bg-white border rounded shadow">
               <div class="border-b p-3">
-                <h5 class="font-bold uppercase text-gray-600">Últimos Pedidos</h5>
+                <h5 class="font-bold uppercase text-gray-600">Todos os Pedidos</h5>
               </div>
               <div class="p-5">
                 <table class="w-full p-5 text-gray-700">
@@ -109,9 +110,6 @@
                 <button type="button" class="border border-green-500 text-green-500 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-green-600 focus:outline-none focus:shadow-outline">
                     Novo Pedido
                 </button>
-                <button type="button" class="border border-gray-700 text-gray-700 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-                  Ver todos
-              </button>
               </div>
             </div>
             <!--/table Card-->
