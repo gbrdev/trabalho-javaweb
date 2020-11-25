@@ -18,24 +18,24 @@
                     </label>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
-                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>data do pedido</label>
+                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='date'>data do pedido</label>
                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id="date" type="date" required="">
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
-                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>prazo de entrega</label>
-                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Informe o prazo de entregaem dias' required>
+                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-2'>prazo de entrega</label>
+                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-2' type='text' placeholder='Informe o prazo de entregaem dias' required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
-                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>veículo responsável pela entrega</label>
-                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Informe o veículo responsável' required>
+                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-3'>veículo responsável pela entrega</label>
+                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-3' type='text' placeholder='Informe o veículo responsável' required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
-                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>peso da encomenda</label>
-                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Informe o peso em gramas' required>
+                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-4'>peso da encomenda</label>
+                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-4' type='text' placeholder='Informe o peso em gramas' required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
-                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-1'>distância que será percorrida</label>
-                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-1' type='text' placeholder='Informe a distância em km/s' required>
+                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='grid-text-5'>distância que será percorrida</label>
+                    <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500' id='grid-text-5' type='text' placeholder='Informe a distância em km/s' required>
                 </div>
                     <div class="flex justify-center">
                         <button class="appearance-none bg-gray-200 text-gray-900 px-2 py-2 shadow-sm border border-gray-400 rounded-md mr-3" type="submit">Cadastrar</button>

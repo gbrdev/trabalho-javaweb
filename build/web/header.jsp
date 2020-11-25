@@ -44,7 +44,7 @@
                                         src="./src/profiles/default.png"
                                         alt="Avatar of User"
                                         />
-                                    <span class="hidden md:inline-block">Olá, {user.name} </span>
+                                    <span class="hidden md:inline-block">Olá, admin</span>
                                     <svg
                                         class="pl-2 h-2"
                                         version="1.1"
