@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +30,7 @@ public class PedidoDAO {
             System.out.println("Conectado");
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
-        }
+        }             
     }
     
     
@@ -48,15 +49,16 @@ public class PedidoDAO {
     public Boolean inserir(Object objeto) {
         PedidoMODEL pd = (PedidoMODEL) objeto;
         PreparedStatement stmt = null;
-        String sql = "INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido) \n" +
-"VALUES (?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) \n" +
+"VALUES (?, ?, ?, ?, ?, ?);";
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, pd.getDataRealizacaoPedido());
+            stmt.setDate(1, pd.getDataRealizacaoPedido());
             stmt.setInt(2, pd.getPrazoEntregaPedido());
             stmt.setString(3, pd.getVeiculoResponsavelPedido());
             stmt.setFloat(4, pd.getPesoPedido());
             stmt.setFloat(5, pd.getDistanciaPedido());
+            stmt.setString(6, pd.getStatusPedido());
             stmt.execute();
             return true;
         } catch (Exception e) {
@@ -88,11 +90,12 @@ public class PedidoDAO {
             while (rs.next()) {
                 pd = new PedidoMODEL();
                 pd.setIdPedido(rs.getInt("idPedido"));
-                pd.setDataRealizacaoPedido(rs.getString("dataRealizacaoPedido"));
+                pd.setDataRealizacaoPedido(rs.getDate("dataRealizacaoPedido"));
                 pd.setPrazoEntregaPedido(rs.getInt("prazoEntregaPedido"));
                 pd.setVeiculoResponsavelPedido(rs.getString("veiculoResponsavelPedido"));
                 pd.setPesoPedido(rs.getFloat("pesoPedido"));
                 pd.setDistanciaPedido(rs.getFloat("distanciaPedido"));
+                pd.setStatusPedido(rs.getString("statusPedido"));
             }
         } catch (Exception ex) {
             System.out.println("Problemas ao carregar dados de Estado! Erro: " + ex.getMessage());
@@ -118,12 +121,13 @@ public class PedidoDAO {
             while (rs.next()) {
                 PedidoMODEL pd = new PedidoMODEL();
                 pd.setIdPedido(rs.getInt("idPedido"));
-                pd.setDataRealizacaoPedido(rs.getString("dataRealizacaoPedido"));
+                pd.setDataRealizacaoPedido(rs.getDate("dataRealizacaoPedido"));
                 pd.setPrazoEntregaPedido(rs.getInt("prazoEntregaPedido"));
                 pd.setVeiculoResponsavelPedido(rs.getString("veiculoResponsavelPedido"));
                 pd.setPesoPedido(rs.getFloat("pesoPedido"));
                 pd.setDistanciaPedido(rs.getFloat("distanciaPedido"));
-                resultado.add(pd);
+                pd.setStatusPedido(rs.getString("statusPedido"));
+                resultado.add(pd);       
             }
         } catch (Exception e) {
             System.out.println("Erro ao listar: " + e.getMessage());

@@ -8,13 +8,14 @@
  * Created: 24/11/2020
  */
 CREATE TABLE pedido(
-	idPedido SERIAL,
+    idPedido SERIAL,
     dataRealizacaoPedido DATE NOT NULL,
     prazoEntregaPedido INT NOT NULL,
     veiculoResponsavelPedido VARCHAR(15) NOT NULL,
     pesoPedido NUMERIC(10,2) NOT NULL,
-    distanciaPedido NUMERIC(10,2) NOT NULL
+    distanciaPedido NUMERIC(10,2) NOT NULL,
+    statusPedido VARCHAR(20) NOT NULL
 );
 
-INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido) 
-VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5);
+INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) 
+VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5, 'Entregue');

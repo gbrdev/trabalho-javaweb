@@ -1,4 +1,4 @@
-<%--<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="iso-8859-1" %>
 <!--HEADER QUE CONTEM O MENU-->
 <jsp:include page="header.jsp"/>
@@ -6,7 +6,9 @@
     <div class="container w-full mx-auto lg:pt-20 lg:mt-10 pt-20 mt-5">
       <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
         <jsp:include page="components/boxServices.jsp"/>
+        <!-- TABELA PEDIDOS -->
         <jsp:include page="components/listarPedidos.jsp"/>
+<!-- /TABELA PEDIDOS -->
     </div>
     <!-- FIM DO CONTEUDO -->
 <!--FOOTER-->

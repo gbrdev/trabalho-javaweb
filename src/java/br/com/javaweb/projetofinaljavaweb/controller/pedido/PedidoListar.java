@@ -33,11 +33,11 @@ public class PedidoListar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=iso-8859-1");
         try {
-            GenericDAO dao = (GenericDAO) new PedidoDAO();
-            request.setAttribute("estados", dao.listar());
-            request.getRequestDispatcher("tabelaPedidos.jsp").forward(request, response);
+            PedidoDAO dao = new PedidoDAO();
+            request.setAttribute("pedidos", dao.listar());
+            request.getRequestDispatcher("pedidos.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println("Problema no Servlet: " + e.getMessage());
         }

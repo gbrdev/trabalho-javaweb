@@ -5,17 +5,20 @@
  */
 package br.com.javaweb.projetofinaljavaweb.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author Cyborg
  */
 public class PedidoMODEL {
     private int idPedido;
-    private String dataRealizacaoPedido;
+    private Date dataRealizacaoPedido;
     private int prazoEntregaPedido;
     private String veiculoResponsavelPedido;
     private float pesoPedido;
     private float distanciaPedido;
+    private String statusPedido;
 
     /**
      * @return the idPedido
@@ -34,14 +37,14 @@ public class PedidoMODEL {
     /**
      * @return the dataRealizacaoPedido
      */
-    public String getDataRealizacaoPedido() {
+    public Date getDataRealizacaoPedido() {
         return dataRealizacaoPedido;
     }
 
     /**
      * @param dataRealizacaoPedido the dataRealizacaoPedido to set
      */
-    public void setDataRealizacaoPedido(String dataRealizacaoPedido) {
+    public void setDataRealizacaoPedido(Date dataRealizacaoPedido) {
         this.dataRealizacaoPedido = dataRealizacaoPedido;
     }
 
@@ -99,6 +102,20 @@ public class PedidoMODEL {
      */
     public void setDistanciaPedido(float distanciaPedido) {
         this.distanciaPedido = distanciaPedido;
+    }
+
+    /**
+     * @return the statusPedido
+     */
+    public String getStatusPedido() {
+        return statusPedido;
+    }
+
+    /**
+     * @param statusPedido the statusPedido to set
+     */
+    public void setStatusPedido(String statusPedido) {
+        this.statusPedido = statusPedido;
     }
     
     

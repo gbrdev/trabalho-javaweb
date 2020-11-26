@@ -128,7 +128,7 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a
                                     class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-red-600 active:border-red-600"
-                                    href="pedidos.jsp"
+                                    href="${pageContext.request.contextPath}/PedidoListar"
                                     >
                                     <i class="fas fa-box pr-1"></i>Pedidos
                                 </a>
