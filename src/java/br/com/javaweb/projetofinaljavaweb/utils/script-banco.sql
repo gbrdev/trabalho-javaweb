@@ -19,3 +19,12 @@ CREATE TABLE pedido(
 
 INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) 
 VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5, 'Entregue');
+
+INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) 
+VALUES ('24/12/2020', 15, 'TruckT-23', 5.1, 380.99, 'A caminho');
+
+INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) 
+VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5, 'Entregue');
+
+INSERT INTO pedido (dataRealizacaoPedido, prazoEntregaPedido, veiculoResponsavelPedido, pesoPedido, distanciaPedido, statusPedido) 
+VALUES ('10/10/2020', 15, 'ABC-1234', 2.5, 20.5, 'Entregue');
