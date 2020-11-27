@@ -97,7 +97,6 @@ public class PedidoDAO {
 
     }
     
-    
     public Object carregar(int numero) {
         int idPedido = numero;
         PreparedStatement stmt = null;

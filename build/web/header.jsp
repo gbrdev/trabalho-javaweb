@@ -120,7 +120,7 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a
                                     class="block py-1 md:py-3 pl-1 pr-2 align-middle text-darkblue-logo hover:text-gray-800 border-b-2 border-gray-100 hover:border-blue-900"
-                                    href="home.jsp"
+                                    href="${pageContext.request.contextPath}/Principal"
                                     >
                                     <i class="fas fa-home pr-1"></i>Principal
                                 </a>
@@ -144,7 +144,7 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a
                                     class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-yellow-600"
-                                    href="#usuarios"
+                                    href="${pageContext.request.contextPath}/Usuarios"
                                     >
                                     <i class="fas fa-users pr-1"></i>Usuários
                                 </a>

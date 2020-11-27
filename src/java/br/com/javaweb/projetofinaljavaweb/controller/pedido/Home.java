@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Cyborg
  */
-@WebServlet(name = "PedidoCarregar", urlPatterns = {"/PedidoCarregar"})
-public class PedidoCarregar extends HttpServlet {
+@WebServlet(name = "Home", urlPatterns = {"/Principal"})
+public class Home extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,14 +33,13 @@ public class PedidoCarregar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        response.setContentType("text/html;charset=iso-8859-1");
         try {
             PedidoDAO dao = new PedidoDAO();
-            request.setAttribute("pedido", dao.carregar(idPedido));
-            request.getRequestDispatcher("alterarPedido.jsp").forward(request, response);
+            request.setAttribute("pedidos", dao.listar());
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         } catch (Exception e) {
-            System.out.println("Problemas ao carregar dados do pedido! Erro:" + e.getMessage());
+            System.out.println("Problema no Servlet: " + e.getMessage());
         }
     }
 

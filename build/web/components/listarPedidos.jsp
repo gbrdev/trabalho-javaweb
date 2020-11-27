@@ -39,11 +39,11 @@
                                     </td>
                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
                                         <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Veículo Responsável</span>
-                                    ${pedido.veiculoResponsavelPedido}
+                                    Placa: ${pedido.veiculoResponsavelPedido}
                                     </td>
                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
                                         <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Prazo de Entrega</span>
-                                    ${pedido.prazoEntregaPedido}
+                                    ${pedido.prazoEntregaPedido} Dias
                                     </td>
                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
                                         <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Peso da Encomenda</span>
@@ -55,14 +55,16 @@
                                     </td>
                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
                                         <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 mb-10 text-xs font-bold">Status</span>
-                                        <span class="rounded bg-gray-400 py-1 px-3 text-xs font-bold text-white">
+                                        <span class="rounded bg-yellow-400 py-1 px-3 text-xs font-bold text-white">
                                             ${pedido.statusPedido}
                                         </span>
                                     </td>
                                     <td class="w-full lg:w-auto p-3 text-gray-800 text-center lg:text-left block lg:table-cell relative lg:static">
                                         <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold">Actions</span>
-                                        <a href="${pageContext.request.contextPath}/PedidoCarregar?idPedido=${pedido.idPedido}" class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Editar</a>
-                                        <a href="${pageContext.request.contextPath}/PedidoExcluir?idPedido=${pedido.idPedido}" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Remover</a>
+                                        <a href="${pageContext.request.contextPath}/PedidoCarregar?idPedido=${pedido.idPedido}" 
+                                           class="text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Editar</a>
+                                        <a href="${pageContext.request.contextPath}/PedidoExcluir?idPedido=${pedido.idPedido}" 
+                                           class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Remover</a>
                                     </td>
                                 </tr>
                             </c:forEach>
