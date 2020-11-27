@@ -5,6 +5,7 @@
  */
 package br.com.javaweb.projetofinaljavaweb.controller.pedido;
 
+import br.com.javaweb.projetofinaljavaweb.dao.PedidoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,18 +32,20 @@ public class PedidoExcluir extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet PedidoExcluir</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet PedidoExcluir at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        response.setContentType("text/html;charset=iso-8859-1");
+        int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+        String mensagem = null;
+        try {
+            PedidoDAO dao = new PedidoDAO();
+            if (dao.excluir(idPedido)) {
+                mensagem = "Pedido excluído com Sucesso!";
+            } else {
+                mensagem = "Problemas ao excluir Pedido";
+            }
+            request.setAttribute("mensagem", mensagem);
+            response.sendRedirect("PedidoListar");
+        } catch (Exception e) {
+            System.out.println("Problemas no Servlet ao excluir Pedido! Erro: " + e.getMessage());
         }
     }
 

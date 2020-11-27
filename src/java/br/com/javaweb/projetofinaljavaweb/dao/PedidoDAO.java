@@ -45,6 +45,28 @@ public class PedidoDAO {
         return retorno;
     }
     
+    public Boolean excluir(int numero) {
+        int idPedido = numero;
+        PreparedStatement stmt = null;
+        String sql = "DELETE FROM pedido WHERE idPedido=?;";
+
+        try {
+            stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, idPedido);
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Problemas ao excluir a Pedido! Erro: " + e.getMessage());
+            return false;
+        } finally {
+            try {
+                ConFac.closeConnection(conexao, stmt);
+            } catch (Exception e) {
+                System.out.println("Problemas ao fechar parametros de conexão! Erro: " + e.getMessage());
+            }
+        }
+    }
+    
     
     public Boolean inserir(Object objeto) {
         PedidoMODEL pd = (PedidoMODEL) objeto;
