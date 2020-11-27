@@ -36,9 +36,9 @@ public class PedidoCarregar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         int idPedido = Integer.parseInt(request.getParameter("idPedido"));
         try {
-            GenericDAO dao = (GenericDAO) new PedidoDAO();
+            PedidoDAO dao = new PedidoDAO();
             request.setAttribute("pedido", dao.carregar(idPedido));
-            request.getRequestDispatcher("cadastro.jsp").forward(request, response);
+            request.getRequestDispatcher("novoPedido.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println("Problemas ao carregar dados do Estado! Erro:" + e.getMessage());
         }

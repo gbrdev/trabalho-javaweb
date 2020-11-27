@@ -9,7 +9,7 @@
  */
 CREATE TABLE pedido(
     idPedido SERIAL,
-    dataRealizacaoPedido DATE NOT NULL,
+    dataRealizacaoPedido VARCHAR(20),
     prazoEntregaPedido INT NOT NULL,
     veiculoResponsavelPedido VARCHAR(15) NOT NULL,
     pesoPedido NUMERIC(10,2) NOT NULL,

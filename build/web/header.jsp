@@ -136,7 +136,7 @@
                             <li class="mr-6 my-2 md:my-0">
                                 <a
                                     class="block py-1 md:py-3 pl-1 pr-2 align-middle text-gray-700 hover:text-gray-800 border-b-2 border-gray-100 hover:border-green-600"
-                                    href="novoPedido.jsp"
+                                    href="${pageContext.request.contextPath}/PedidoNovo"
                                     >
                                     <i class="fas fa-truck-loading pr-1"></i>Novo Pedido
                                 </a>

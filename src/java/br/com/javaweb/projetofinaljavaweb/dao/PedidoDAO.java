@@ -34,13 +34,13 @@ public class PedidoDAO {
     }
     
     
-    public Boolean cadastrar(Object objeto) {
+    public Boolean cadastrar(PedidoMODEL objeto) {
         PedidoMODEL pd = (PedidoMODEL) objeto;
         Boolean retorno = false;
         if (pd.getIdPedido()== 0) {
             retorno = this.inserir(pd);
         } else {
-            //retorno = this.alterar(pd);
+            retorno = this.alterar(pd);
         }
         return retorno;
     }
@@ -75,7 +75,7 @@ public class PedidoDAO {
 "VALUES (?, ?, ?, ?, ?, ?);";
         try {
             stmt = conexao.prepareStatement(sql);
-            stmt.setDate(1, pd.getDataRealizacaoPedido());
+            stmt.setString(1, pd.getDataRealizacaoPedido());
             stmt.setInt(2, pd.getPrazoEntregaPedido());
             stmt.setString(3, pd.getVeiculoResponsavelPedido());
             stmt.setFloat(4, pd.getPesoPedido());
@@ -112,7 +112,7 @@ public class PedidoDAO {
             while (rs.next()) {
                 pd = new PedidoMODEL();
                 pd.setIdPedido(rs.getInt("idPedido"));
-                pd.setDataRealizacaoPedido(rs.getDate("dataRealizacaoPedido"));
+                pd.setDataRealizacaoPedido(rs.getString("dataRealizacaoPedido"));
                 pd.setPrazoEntregaPedido(rs.getInt("prazoEntregaPedido"));
                 pd.setVeiculoResponsavelPedido(rs.getString("veiculoResponsavelPedido"));
                 pd.setPesoPedido(rs.getFloat("pesoPedido"));
@@ -143,7 +143,7 @@ public class PedidoDAO {
             while (rs.next()) {
                 PedidoMODEL pd = new PedidoMODEL();
                 pd.setIdPedido(rs.getInt("idPedido"));
-                pd.setDataRealizacaoPedido(rs.getDate("dataRealizacaoPedido"));
+                pd.setDataRealizacaoPedido(rs.getString("dataRealizacaoPedido"));
                 pd.setPrazoEntregaPedido(rs.getInt("prazoEntregaPedido"));
                 pd.setVeiculoResponsavelPedido(rs.getString("veiculoResponsavelPedido"));
                 pd.setPesoPedido(rs.getFloat("pesoPedido"));
@@ -161,5 +161,33 @@ public class PedidoDAO {
             }
         }
         return resultado;
+    }
+    
+    public Boolean alterar(PedidoMODEL objeto) {
+        PedidoMODEL pd = (PedidoMODEL) objeto;
+        PreparedStatement stmt = null;
+        String sql = "UPDATE pedido SET dataRealizacaoPedido=?, prazoEntregaPedido=?, veiculoResponsavelPedido=?, pesoPedido=?, distanciaPedido=?, statusPedido=?;";
+        try {
+            stmt = conexao.prepareStatement(sql);
+            stmt.setString(1, pd.getDataRealizacaoPedido());
+            stmt.setInt(2, pd.getPrazoEntregaPedido());
+            stmt.setString(3, pd.getVeiculoResponsavelPedido());
+            stmt.setFloat(4, pd.getPesoPedido());
+            stmt.setFloat(5, pd.getDistanciaPedido());
+            stmt.setString(6, pd.getStatusPedido());
+            stmt.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Problemas ao editar a Pedido! Erro: " + e.getMessage());
+
+            return false;
+        } finally {
+            try {
+                ConFac.closeConnection(conexao, stmt);
+            } catch (Exception e) {
+                System.out.println("Problemas ao fechar parâmetros de conexão! Erro: " + e.getMessage());
+            }
+        }
+
     }
 }

@@ -13,7 +13,7 @@ import java.sql.Date;
  */
 public class PedidoMODEL {
     private int idPedido;
-    private Date dataRealizacaoPedido;
+    private String dataRealizacaoPedido;
     private int prazoEntregaPedido;
     private String veiculoResponsavelPedido;
     private float pesoPedido;
@@ -37,14 +37,14 @@ public class PedidoMODEL {
     /**
      * @return the dataRealizacaoPedido
      */
-    public Date getDataRealizacaoPedido() {
+    public String getDataRealizacaoPedido() {
         return dataRealizacaoPedido;
     }
 
     /**
      * @param dataRealizacaoPedido the dataRealizacaoPedido to set
      */
-    public void setDataRealizacaoPedido(Date dataRealizacaoPedido) {
+    public void setDataRealizacaoPedido(String dataRealizacaoPedido) {
         this.dataRealizacaoPedido = dataRealizacaoPedido;
     }
 
@@ -116,6 +116,22 @@ public class PedidoMODEL {
      */
     public void setStatusPedido(String statusPedido) {
         this.statusPedido = statusPedido;
+    }
+
+    public void setDataRealizacaoPedido(long dataRealizacaoPedido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setPrazoEntregaPedido(String prazoEntregaPedido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setPesoPedido(String pesoPedido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDistanciaPedido(String distanciaPedido) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
