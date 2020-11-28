@@ -7,7 +7,7 @@
             <!--Table Card-->
             <div class="bg-white border rounded shadow">
                 <div class="border-b p-3">
-                    <h5 class="font-bold uppercase text-gray-600">Todos os Pedidos</h5>
+                    <h5 class="font-bold uppercase text-gray-600">Últimos Pedidos</h5>
                 </div>
                 <div class="p-5">
                     <table class="w-full p-5 text-gray-700">

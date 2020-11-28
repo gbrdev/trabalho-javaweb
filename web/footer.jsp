@@ -9,9 +9,9 @@
           <a class="my-3 block" href="/#">Quem somos <span class="text-teal-600 text-xs p-1"></span></a>
         </div>
       <div class="p-5 w-48 ">
-        <div class="text-xs uppercase text-gray-500 font-medium">Usuários</div>
-        <a class="my-3 block" href="/#">Logar-se<span class="text-teal-600 text-xs p-1"></span></a>
-        <a class="my-3 block" href="/#">Novo usuário<span class="text-teal-600 text-xs p-1"></span></a>
+        <div class="text-xs uppercase text-gray-500 font-medium">Pedidos</div>
+        <a class="my-3 block" href="${pageContext.request.contextPath}/PedidoListar">Listar pedidos<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="${pageContext.request.contextPath}/">Novo pedido<span class="text-teal-600 text-xs p-1"></span></a>
         <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
       </div>
       <div class="p-5 w-48 ">
@@ -21,16 +21,19 @@
         <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
       </div>
       <div class="p-5 w-48 ">
-        <div class="text-xs uppercase text-gray-500 font-medium">Usuários</div>
-        <a class="my-3 block" href="/#">Logar-se<span class="text-teal-600 text-xs p-1"></span></a>
-        <a class="my-3 block" href="/#">Novo usuário<span class="text-teal-600 text-xs p-1"></span></a>
-        <a class="my-3 block" href="/#">Listar todos<span class="text-teal-600 text-xs p-1">New</span></a>
+        <div class="text-xs uppercase text-gray-500 font-medium">Suporte</div>
+        <a class="my-3 block" href="/#">Abrir Chamado<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Abrir Chat<span class="text-teal-600 text-xs p-1"></span></a>
+        <a class="my-3 block" href="/#">Ticket<span class="text-teal-600 text-xs p-1">New</span></a>
       </div>
     </div>
    <div class="bg-gray-100 pt-2 ">
       <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
          md:flex-row max-w-12xl">
-         <div class="mt-2">© Copyright 2020. All Rights Reserved.</div>
+          <div class="mt-2"><i class="far fa-copyright"></i> Copyright 2020 - Todos direitos reservados. <br>
+              <a href="https://www.github.com/pedrozonta21" target="_blank" alt="Github do Predo"><i class="fab fa-github"></i> Pedro Zonta</a><br>
+              <a href="https://www.github.com/gbrdev" target="_blank" alt="Github do Gariba"><i class="fab fa-github"></i> Gabriel Rodrigues</a>
+          </div>
          <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
             <a href="/#" class="w-6 mx-1">
                <svg class="fill-current cursor-pointer text-gray-500 hover:text-gray-400" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">

@@ -47,7 +47,7 @@ function checkParent(t, elm) {
 
 // LOADER
 (function () {
-  setTimeout(loader, 1500);
+  setTimeout(loader, 1200);
   function loader() {
     const loader = document.querySelector('.loader');
     if (loader.classList.contains('load')) {

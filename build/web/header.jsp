@@ -13,6 +13,11 @@
             integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
             crossorigin="transportadora"
             />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
+            integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ="
+            crossorigin="transportadora"
+        ></script>
     </head>
     <!--TEM QUE MANTER O BODY NA INDEX PARA QUE O LOADER FUNCIONE-->
     <body class="bg-gray-100 font-sans leading-normal tracking-normal">

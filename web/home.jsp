@@ -7,6 +7,8 @@
       <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
         <jsp:include page="components/boxServices.jsp"/>
         <jsp:include page="components/divisor.jsp"/>
+        <jsp:include page="components/boxesGraficos.jsp"/>
+        <jsp:include page="components/graficos.jsp"/>
         <jsp:include page="components/ultimosPedidos.jsp"/>
     </div>
     <!-- FIM DO CONTEUDO -->

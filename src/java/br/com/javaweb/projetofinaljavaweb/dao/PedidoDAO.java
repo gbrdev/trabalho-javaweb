@@ -165,7 +165,7 @@ public class PedidoDAO {
     public Boolean alterar(PedidoMODEL objeto) {
         PedidoMODEL pd = (PedidoMODEL) objeto;
         PreparedStatement stmt = null;
-        String sql = "UPDATE pedido SET dataRealizacaoPedido=?, prazoEntregaPedido=?, veiculoResponsavelPedido=?, pesoPedido=?, distanciaPedido=?, statusPedido=?;";
+        String sql = "UPDATE pedido SET dataRealizacaoPedido=?, prazoEntregaPedido=?, veiculoResponsavelPedido=?, pesoPedido=?, distanciaPedido=?, statusPedido=? WHERE idPedido = ?;";
         try {
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, pd.getDataRealizacaoPedido());
@@ -174,6 +174,7 @@ public class PedidoDAO {
             stmt.setFloat(4, pd.getPesoPedido());
             stmt.setFloat(5, pd.getDistanciaPedido());
             stmt.setString(6, pd.getStatusPedido());
+	    stmt.setInt(7, pd.getIdPedido());
             stmt.execute();
             return true;
         } catch (Exception e) {

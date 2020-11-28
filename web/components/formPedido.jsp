@@ -16,7 +16,7 @@
                 <div class='w-full md:w-full px-3 mb-6'>
                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='prazoEntregaPedido'>prazo de entrega</label>
                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                           name="prazoEntregaPedido" id='prazoEntregaPedido' type='number' maxlength="3" placeholder='Informe o prazo de entrega em dias' required>
+                           name="prazoEntregaPedido" id='prazoEntregaPedido' type='number' placeholder='Informe o prazo de entrega em dias' required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='veiculoResponsavelPedido'>veículo responsável pela entrega</label>
@@ -26,12 +26,12 @@
                 <div class='w-full md:w-full px-3 mb-6'>
                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='pesoPedido'>peso da encomenda</label>
                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                           name="pesoPedido" id='pesoPedido' type='number' maxlength='3' placeholder='Informe o peso em gramas' required>
+                           name="pesoPedido" id='pesoPedido' type='number' placeholder='Informe o peso em gramas' step=".01" required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='distanciaPedido'>distância que será percorrida</label>
                     <input class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                           name="distanciaPedido" id='distanciaPedido' type='number' maxlength="6" placeholder='Informe a distância em km/s' required>
+                           name="distanciaPedido" id='distanciaPedido' type='number' placeholder='Informe a distância em km/s' step=".01" required>
                 </div>
                 <div class='w-full md:w-full px-3 mb-6'>
                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2' for='statusPedido'>status atual do pedido</label>
